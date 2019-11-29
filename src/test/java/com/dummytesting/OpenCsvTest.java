@@ -11,7 +11,13 @@ public class OpenCsvTest {
     @Test
     public void Shouldreturnhappy() throws IOException {
         OPencsv oPencsv = new OPencsv();
-        Assert.assertEquals(37,oPencsv.numberOfRecord());
+
+        try {
+            int i = oPencsv.numberOfRecord();
+            Assert.assertEquals(37,i);
+        } catch (CustomException e) {
+            e.printStackTrace();
+        }
 
     }
 
